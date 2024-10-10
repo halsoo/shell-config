@@ -1,3 +1,4 @@
+./config_locale.sh
 ./install_omz.sh
 ./config_omz.sh
 ./install_pyenv.sh
