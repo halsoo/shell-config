@@ -20,6 +20,8 @@ PROMPT_FAILURE_COLOR=$FG[160] # bright red
 PROMPT_NORMAL_COLOR=$FG[255] # bright grey
 PROMPT_VCS_INFO_COLOR=$FG[226] # bright yellow
 
+HOSTNAME=${"$(hostname)":0:5}
+
 # Set required options.
 setopt promptsubst
 
@@ -42,4 +44,4 @@ zstyle ':vcs_info:*:*' nvcsformats "%~" ""
 # Define prompts.
 PROMPT="
 %{$PROMPT_PWD_COLOR%}%{$FX[bold]%}%0~%{$PROMPT_NORMAL_COLOR%} | %{$PROMPT_VCS_INFO_COLOR%}"'$vcs_info_msg_1_'"%{$FX[reset]%}
-%{$FX[no-bold]%}%{$PROMPT_NORMAL_COLOR%}%n %{$FX[bold]%}%(0?.%{$PROMPT_SUCCESS_COLOR%}.%{$PROMPT_FAILURE_COLOR%})%(!.$PROMPT_ROOT_END.$PROMPT_DEFAULT_END)%{$FX[no-bold]%}%{$FX[reset]%} "
+%{$FX[no-bold]%}%{$PROMPT_NORMAL_COLOR%}%n@%{$HOSTNAME%} %{$FX[bold]%}%(0?.%{$PROMPT_SUCCESS_COLOR%}.%{$PROMPT_FAILURE_COLOR%})%(!.$PROMPT_ROOT_END.$PROMPT_DEFAULT_END)%{$FX[no-bold]%}%{$FX[reset]%} "
