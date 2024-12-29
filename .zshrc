@@ -8,6 +8,8 @@ ZSH_DISABLE_COMPFIX="true"
 source $ZSH/oh-my-zsh.sh
 
 # USER CONFIG
+export NVCC_PATH="/usr/local/cuda/bin"
+export PATH="$NVCC_PATH:$PATH"
 
 # CUSTOM COMMAND for mkdir && cd
 function mkcd {
