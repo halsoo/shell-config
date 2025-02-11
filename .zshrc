@@ -8,8 +8,9 @@ ZSH_DISABLE_COMPFIX="true"
 source $ZSH/oh-my-zsh.sh
 
 # USER CONFIG
+export USER_BIN="$HOME/.local/bin"
 export NVCC_PATH="/usr/local/cuda/bin"
-export PATH="$NVCC_PATH:$PATH"
+export PATH="$USER_BIN:$NVCC_PATH:$PATH"
 
 # CUSTOM COMMAND for mkdir && cd
 function mkcd {
@@ -34,3 +35,6 @@ alias change="source ~/.zshrc"
 alias home="cd /home/dongmin"
 
 alias allfiles="find $(pwd -P) -mindepth 2 -type f | xargs -I % sh -c 'echo ${"%":t}'"
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
