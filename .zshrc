@@ -10,7 +10,8 @@ source $ZSH/oh-my-zsh.sh
 # USER CONFIG
 export USER_BIN="$HOME/.local/bin"
 export NVCC_PATH="/usr/local/cuda/bin"
-export PATH="$USER_BIN:$NVCC_PATH:$PATH"
+export CONDA_PATH="$HOME/miniconda3/bin"
+export PATH="$USER_BIN:$NVCC_PATH:$CONDA_PATH:$PATH"
 
 # CUSTOM COMMAND for mkdir && cd
 function mkcd {
