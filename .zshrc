@@ -40,6 +40,3 @@ alias allfiles="find $(pwd -P) -mindepth 2 -type f | xargs -I % sh -c 'echo ${"%
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
-
-
-sudo /etc/init.d/nordvpn start
