@@ -7,3 +7,4 @@ pyenv install 3.8.10
 ./install_nanum_font.sh
 sudo -H pip install -U pipenv
 ./install_miniconda.sh
+./install_nordvpn.sh
