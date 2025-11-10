@@ -12,7 +12,9 @@ export CUDA_VISIBLE_DEVICES=1
 export USER_BIN="$HOME/.local/bin"
 export NVCC_PATH="/usr/local/cuda/bin"
 export CONDA_PATH="$HOME/miniconda3/bin"
-export PATH="$USER_BIN:$NVCC_PATH:$CONDA_PATH:$PATH"
+export DUCKDB_PATH="$HOME/.duckdb/cli"
+
+export PATH="$HOME:$USER_BIN:$NVCC_PATH:$CONDA_PATH:$DUCKDB_PATH:$PATH"
 
 # QT HEADLESS
 # export QT_QPA_PLATFORM=offscreen
@@ -43,9 +45,6 @@ alias home="cd /home/dongmin"
 
 alias vpnstart="sudo /etc/init.d/nordvpn start"
 
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"

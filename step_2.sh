@@ -1,12 +1,8 @@
-./config_locale.sh
 ./install_omz.sh
-./config_omz.sh
+./copy_configs_scripts.sh
+# python related setups
 ./install_pyenv.sh
-pyenv install 3.8.10
-./config_git.sh
-./install_nanum_font.sh
 sudo -H pip install -U pipenv
 sudo -H pip install -U uv
-./install_chafa.sh
 ./install_miniconda.sh
 # ./install_nordvpn.sh
