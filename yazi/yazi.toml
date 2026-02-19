@@ -109,6 +109,8 @@ prepend_previewers = [
   { name = "*.ipynb", run = "rich-preview"}, 
   { name = "*.rst", run = "rich-preview"},
   { name = "*.py", run = "rich-preview"}, 
+  { name = "*.krn", run = "rich-preview"}, 
+  { name = "*.ekrn", run = "rich-preview"}, 
   # duckdb
   { name = "*.csv", run = "duckdb" },  
   { name = "*.tsv", run = "duckdb" },  
