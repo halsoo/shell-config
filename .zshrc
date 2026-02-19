@@ -33,13 +33,12 @@ function mkcd {
 }
 
 # ALIASES
-alias whereami="echo \$PWD"
 alias cl="clear"
-
-alias gitAA="git add ."
 
 alias config="vi ~/.zshrc"
 alias change="source ~/.zshrc"
+
+alias activate="source ./.venv/bin/activate"
 
 alias home="cd /home/dongmin"
 
