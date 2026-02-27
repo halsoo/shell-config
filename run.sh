@@ -1,6 +1,6 @@
 ./config_locale.sh
 ./config_git.sh
-# ./install_dependencies.sh
+./install_dependencies.sh
 # default shell to zsh
 chsh -s `which zsh`
 # copy .zshrc and omz theme
@@ -12,6 +12,8 @@ cp ./imcat $HOME/imcat
 cp ./rsyncp $HOME/rsyncp
 # copy yazi config
 cp ./yazi/* $HOME/.config/yazi/
+ya pkg install
+yazi --clear-cache
 # start zsh
 zsh
 source $HOME/.zshrc

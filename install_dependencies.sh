@@ -7,10 +7,17 @@ echo "==================================="
 echo "=====  ATP  ====="
 sudo apt-get install -y \
   zsh \
-  tmux \
+  chafa \
   file curl unzip \
   build-essential zlib1g-dev libffi-dev libssl-dev libbz2-dev libreadline-dev libsqlite3-dev liblzma-dev \
-  chafa \
+  libncurses-dev libevent-dev bison pkg-config \
+
+echo "===== tmux ====="
+./install_tmux.sh
+
+echo "===== Rust ====="
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+rustup update
 
 echo "===== pyenv ====="
 curl https://pyenv.run | bash
@@ -37,7 +44,7 @@ rm $HOME/install_miniconda.sh
 
 echo "===== yazi ====="
 python -m pip install rich-cli
-./install_yazi.sh
+cargo install --force yazi-build
 
 echo "===== oh-my-zsh ====="
 curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
