@@ -1,4 +1,0 @@
-sudo apt-get update
-sudo apt-get install -y zsh
-chsh -s `which zsh`
-exit

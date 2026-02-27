@@ -1,3 +1,2 @@
-sudo apt-get install language-pack-en
 sudo locale-gen en_US en_US.UTF-8
-sudo dpkg-reconfigure locales 
+echo "locales locales/default_locale select en_US.UTF-8" | sudo debconf-set-selections

@@ -15,10 +15,10 @@ mouse_events   = [ "click", "scroll" ]
 title_format   = "Yz: {cwd}"
 
 [preview]
-wrap            = "no"
-tab_size        = 2
-max_width       = 600
-max_height      = 900
+wrap            = "yes"
+tab_size        = 5
+max_width       = 1200
+max_height      = 1800
 cache_dir       = ""
 image_delay     = 30
 image_filter    = "triangle"
@@ -111,23 +111,10 @@ prepend_previewers = [
   { name = "*.py", run = "rich-preview"}, 
   { name = "*.krn", run = "rich-preview"}, 
   { name = "*.ekrn", run = "rich-preview"}, 
-  # duckdb
-  { name = "*.csv", run = "duckdb" },  
-  { name = "*.tsv", run = "duckdb" },  
-  { name = "*.json", run = "duckdb" },  
-  { name = "*.parquet", run = "duckdb" },  
-  { name = "*.txt", run = "duckdb" },  
-  { name = "*.xlsx", run = "duckdb" },  
-  { name = "*.db", run = "duckdb" },
-  { name = "*.duckdb", run = "duckdb" }
-]
-prepend_preloaders = [  
-  { name = "*.csv", run = "duckdb", multi = false },  
-  { name = "*.tsv", run = "duckdb", multi = false },  
-  { name = "*.json", run = "duckdb", multi = false },  
-  { name = "*.parquet", run = "duckdb", multi = false },
-  { name = "*.txt", run = "duckdb", multi = false },  
-  { name = "*.xlsx", run = "duckdb", multi = false }
+  { name = "*.txt", run = "rich-preview"},
+  { name = "*.csv", run = "rich-preview" },  
+  { name = "*.tsv", run = "rich-preview" },  
+  { name = "*.json", run = "rich-preview"},  
 ]
 preloaders = [
 	# Image
