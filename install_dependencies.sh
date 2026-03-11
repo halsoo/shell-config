@@ -28,7 +28,6 @@ $HOME/.pyenv/bin/pyenv global 3.10.12
 echo "===== PIP ====="
 sudo -H pip install -U pipenv
 sudo -H pip install -U uv
-sudo -H pip install -U marimo
 
 echo "===== kfont ====="
 wget http://cdn.naver.com/naver/NanumFont/fontfiles/NanumFont_TTF_ALL.zip
@@ -37,14 +36,14 @@ rm -f NanumFont_TTF_ALL.zip
 sudo mv NanumFont /usr/share/fonts/
 fc-cache -f -v
 
-echo "===== conda ====="
-wget --output-document=$HOME/install_miniconda.sh https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-bash $HOME/install_miniconda.sh -b
-rm $HOME/install_miniconda.sh
+# echo "===== conda ====="
+# wget --output-document=$HOME/install_miniconda.sh https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+# bash $HOME/install_miniconda.sh -b
+# rm $HOME/install_miniconda.sh
 
 echo "===== yazi ====="
-python -m pip install rich-cli
-cargo install --force yazi-build
+$HOME/.pyenv/versions/3.10.12/bin/python -m pip install rich-cli
+$HOME/.cargo/bin/cargo install --force yazi-build
 
 echo "===== oh-my-zsh ====="
 curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh

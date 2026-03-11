@@ -1,6 +1,7 @@
 ./config_locale.sh
 ./config_git.sh
 ./install_dependencies.sh
+cp ./tmux.conf $HOME/
 # default shell to zsh
 chsh -s `which zsh`
 # copy .zshrc and omz theme
@@ -11,9 +12,7 @@ cp ./imcat $HOME/imcat
 # copy rsyncp
 cp ./rsyncp $HOME/rsyncp
 # copy yazi config
-cp ./yazi/* $HOME/.config/yazi/
-ya pkg install
-yazi --clear-cache
-# start zsh
-zsh
-source $HOME/.zshrc
+mkdir $HOME/.config/
+cp -r ./yazi/ $HOME/.config/
+$HOME/.cargo/bin/ya pkg install
+$HOME/.cargo/bin/yazi --clear-cache
