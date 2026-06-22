@@ -1,15 +1,13 @@
 #!/usr/bin/env zsh
 # ------------------------------------------------------------------------------
 # Prompt for the Zsh shell:
-#   * One line.
-#   * VCS info on the right prompt.
-#   * Only shows the path on the left prompt by default.
-#   * Crops the path to a defined length and only shows the path relative to
-#     the current VCS repository root.
-#   * Wears a different color wether the last command succeeded/failed.
-#   * Shows user@hostname if connected through SSH.
-#   * Shows if logged in as root or not.
+#   * Wears a different color wether the last command succeeded/failed.
+#   * Shows user@hostname if connected through SSH.
 # ------------------------------------------------------------------------------
+
+# WHERE ARE YOU
+MACHINE_ID="machine-name"
+USER_NAME="%n"
 
 # Customizable parameters.
 PROMPT_DEFAULT_END=❯
@@ -19,8 +17,6 @@ PROMPT_SUCCESS_COLOR=$FG[067] # shady cyan
 PROMPT_FAILURE_COLOR=$FG[160] # bright red
 PROMPT_NORMAL_COLOR=$FG[255] # bright grey
 PROMPT_VCS_INFO_COLOR=$FG[226] # bright yellow
-
-HOSTNAME=${"$(hostname)":0:5}
 
 # Set required options.
 setopt promptsubst
@@ -44,4 +40,5 @@ zstyle ':vcs_info:*:*' nvcsformats "%~" ""
 # Define prompts.
 PROMPT="
 %{$PROMPT_PWD_COLOR%}%{$FX[bold]%}%0~%{$PROMPT_NORMAL_COLOR%} | %{$PROMPT_VCS_INFO_COLOR%}"'$vcs_info_msg_1_'"%{$FX[reset]%}
-%{$FX[no-bold]%}%{$PROMPT_NORMAL_COLOR%}%n@%{$HOSTNAME%} %{$FX[bold]%}%(0?.%{$PROMPT_SUCCESS_COLOR%}.%{$PROMPT_FAILURE_COLOR%})%(!.$PROMPT_ROOT_END.$PROMPT_DEFAULT_END)%{$FX[no-bold]%}%{$FX[reset]%} "
+%{$FX[no-bold]%}%{$PROMPT_NORMAL_COLOR%}$USER_NAME@$MACHINE_ID %{$FX[bold]%}%(0?.%{$PROMPT_SUCCESS_COLOR%}.%{$PROMPT_FAILURE_COLOR%})%(!.$PROMPT_ROOT_END.$PROMPT_DEFAULT_END)%{$FX[no-bold]%}%{$FX[reset]%} "
+
