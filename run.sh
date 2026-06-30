@@ -1,7 +1,7 @@
 ./config_locale.sh
 ./config_git.sh
 ./install_dependencies.sh
-cp ./tmux.conf $HOME/
+cp ./tmux.conf $HOME/.tmux.conf
 # default shell to zsh
 chsh -s `which zsh`
 # copy .zshrc and omz theme
